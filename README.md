@@ -5,13 +5,13 @@ This project builds an interactive analytics dashboard to uncover how income ine
 
 ---
 
-## 🚨 Problem
+##  Problem
 Urban policy teams lack a clear, data-driven way to understand whether construction activity in low-income neighborhoods represents **growth** or **basic survival-level maintenance**.  
 Although Los Angeles publishes detailed permit data, it is fragmented, large-scale, and not directly usable for policy decision-making.
 
 ---
 
-## 🎯 Outcome (Measurable)
+##  Outcome (Measurable)
 This dashboard improves visibility into infrastructure inequality by quantifying the **essential construction reliance gap (%)** between income groups.
 
 **Key Finding:**  
@@ -23,7 +23,7 @@ This metric provides a concrete signal for policymakers to prioritize equitable 
 
 ---
 
-## 🧠 Domain Insight
+##  Domain Insight
 Not all permits represent equal value.  
 Some indicate *improvement* (renovations, additions), while others indicate *survival* (safety repairs, utilities, stabilization).
 
@@ -35,7 +35,7 @@ A lens commonly overlooked in purely technical analyses.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 | Tool | Purpose |
 |------|---------|
 | **Snowflake (Snowpark)** | Scalable querying & joining of large permit + census datasets |
@@ -46,7 +46,7 @@ A lens commonly overlooked in purely technical analyses.
 
 ---
 
-## 📊 Features
+##  Features
 - Classifies permits into **Essential** vs. **Non-Essential**
 - Compares construction reliance across **income-based neighborhood groups**
 - Displays interactive charts:  
@@ -59,4 +59,4 @@ A lens commonly overlooked in purely technical analyses.
 
 ---
 
-## 📈 Example Visuals (Add Screenshots Later)
+## Example Visuals (Add Screenshots Later)
