@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Portfolio | Snowflake × Streamlit Analytics App</title>
+  <meta name="description" content="A one-page portfolio site showcasing a Snowflake + Streamlit analytics project, built with vibe coding." />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional: smooth scroll -->
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 antialiased">
+  <!-- Top gradient glow -->
+  <div class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl"></div>
+    <div class="absolute top-40 right-[-120px] h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-3xl"></div>
+  </div>
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#" class="flex items-center gap-2">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10">🧊</span>
+        <span class="font-semibold tracking-tight">Snowflake × Streamlit</span>
+      </a>
+
+      <nav class="hidden items-center gap-6 text-sm text-zinc-300 md:flex">
+        <a class="hover:text-white" href="#overview">Overview</a>
+        <a class="hover:text-white" href="#architecture">Architecture</a>
+        <a class="hover:text-white" href="#results">Results</a>
+        <a class="hover:text-white" href="#demo">Demo</a>
+        <a class="hover:text-white" href="#contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#demo" class="hidden rounded-xl bg-white px-3 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-100 md:inline-flex">View Demo</a>
+        <button id="menuBtn" class="inline-flex rounded-xl border border-white/10 bg-white/5 p-2 md:hidden" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-zinc-950/95">
+      <div class="mx-auto max-w-6xl px-4 py-3">
+        <div class="grid gap-2 text-sm text-zinc-300">
+          <a class="rounded-lg px-3 py-2 hover:bg-white/5 hover:text-white" href="#overview">Overview</a>
+          <a class="rounded-lg px-3 py-2 hover:bg-white/5 hover:text-white" href="#architecture">Architecture</a>
+          <a class="rounded-lg px-3 py-2 hover:bg-white/5 hover:text-white" href="#results">Results</a>
+          <a class="rounded-lg px-3 py-2 hover:bg-white/5 hover:text-white" href="#demo">Demo</a>
+          <a class="rounded-lg px-3 py-2 hover:bg-white/5 hover:text-white" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-4 pb-10 pt-12 md:pb-16 md:pt-16">
+    <div class="grid items-center gap-10 md:grid-cols-12">
+      <div class="md:col-span-6">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          Portfolio Project • Data App • Snowflake + Streamlit
+        </div>
+
+        <h1 class="mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+          以 <span class="text-fuchsia-300">Snowflake</span> 建立資料層，使用 <span class="text-cyan-200">Streamlit</span> 產品化分析流程，量化 LA 建築許可如何反映收入不平等。
+        </h1>
+        <p class="mt-4 max-w-xl text-zinc-300">
+          An interactive dashboard that analyzes Los Angeles building permits to quantify how income inequality shifts neighborhoods from improvement-focused construction to essential, survival-level maintenance.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="https://github.com/ChiaChunHung/Infrastructure-inequality-dashboard" target="_blank" rel="noreferrer"
+             class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-100">
+            <span>GitHub Repo</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v7H3V3h7"/></svg>
+          </a>
+          <a href="https://github.com/ChiaChunHung/Infrastructure-inequality-dashboard#demo" target="_blank" rel="noreferrer"
+             class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10">
+            Live Demo
+          </a>
+          <a href="#demo" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-transparent px-4 py-2 text-sm font-medium text-zinc-200 hover:bg-white/5">
+            Watch Walkthrough
+          </a>
+        </div>
+
+        <!-- Quick highlights (replace the 3 KPI cards) -->
+        <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4 max-w-xl">
+          <div class="flex items-center justify-between">
+            <div class="text-sm font-semibold">Quick highlights</div>
+            <div class="text-xs text-zinc-400">What this dashboard shows</div>
+          </div>
+
+          <ul class="mt-3 space-y-1.5 text-sm text-zinc-300">
+            <li class="flex gap-2">
+              <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"></span>
+              Essential vs. non-essential composition across income groups
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300"></span>
+              Cumulative reliance patterns (Essentials-first curve) + preference gap by permit type
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-fuchsia-300"></span>
+              Policy-ready inequality signal: essential-share gap (e.g., −13.8 pts in this analysis)
+            </li>
+          </ul>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full border border-white/10 bg-zinc-950/40 px-3 py-1 text-xs text-zinc-200">Snowflake SQL</span>
+            <span class="rounded-full border border-white/10 bg-zinc-950/40 px-3 py-1 text-xs text-zinc-200">Streamlit</span>
+            <span class="rounded-full border border-white/10 bg-zinc-950/40 px-3 py-1 text-xs text-zinc-200">Interactive filters</span>
+            <span class="rounded-full border border-white/10 bg-zinc-950/40 px-3 py-1 text-xs text-zinc-200">Export / share</span>
+          </div>
+        </div>
+        
+      </div>
+<div class="relative md:col-span-6">
+  <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-7 md:p-8">
+    <div class="flex items-center justify-between">
+      <div class="text-sm font-medium">
+        Snowflake × Streamlit Dashboard Preview
+      </div>
+      <div class="flex items-center gap-1">
+        <span class="h-2.5 w-2.5 rounded-full bg-red-400/80"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-yellow-300/80"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
+      </div>
+    </div>
+
+    <div class="mt-4">
+  <!-- Main preview (crop white margins) -->
+  <div class="aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-zinc-950">
+    <img
+	  id="heroPreview"
+      src="assets/dashboard_page_2.png"
+      alt="Dashboard Preview"
+      class="h-full w-full object-contain bg-white transition-opacity duration-500 opacity-100"
+    />
+  </div>
+
+  
+</div>
+
+    <p class="mt-3 text-xs text-zinc-500">
+      Data processed and modeled in Snowflake; insights delivered via an interactive Streamlit dashboard.
+    </p>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section id="overview" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div class="md:col-span-1">
+          <h2 class="text-2xl font-semibold tracking-tight">Overview</h2>
+        </div>
+        <div class="md:col-span-2">
+          <div class="grid gap-4">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div class="text-sm font-semibold">🎯 Problem</div>
+              <p class="mt-2 text-zinc-300">
+                Los Angeles neighborhoods don’t experience construction in the same way. When income inequality is high,
+                the permit mix can shift from value‑adding improvements (additions/new builds) toward essential, survival‑level maintenance.
+                This project measures that shift using LA building permits.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div class="text-sm font-semibold">🧠 Solution</div>
+              <p class="mt-2 text-zinc-300">
+                I built an interactive analytics dashboard that integrates Los Angeles building permits with income-group classification to
+  				compare how construction priorities differ across neighborhoods. The Dashboard lets users drill down through
+  				permit composition, essential vs. non-essential work, cumulative reliance patterns, and preference gaps—turning raw permit logs into
+  				policy-relevant metrics that help quantify how inequality shifts communities from improvement-focused upgrades toward survival-level maintenance.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div class="text-sm font-semibold">🧰 Tech Stack</div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs">Snowflake</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs">SQL</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs">Python</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs">Streamlit</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs">Pandas</span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs">GitHub Actions</span>
+              </div>
+              <p class="mt-3 text-xs text-zinc-400">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="architecture" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Architecture</h2>
+        </div>
+
+        <div class="md:col-span-2">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <!-- Simple architecture SVG -->
+            
+			<svg viewBox="0 0 900 320" class="w-full" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+					<stop offset="0" stop-color="rgba(255,255,255,0.18)"/>
+					<stop offset="1" stop-color="rgba(255,255,255,0.06)"/>
+					</linearGradient>
+				</defs>
+				<rect x="0" y="0" width="900" height="320" rx="22" fill="rgba(0,0,0,0.15)"/>
+
+				<!-- Boxes -->
+				<g font-family="ui-sans-serif, system-ui" font-size="14" fill="white">
+					<!-- Left -->
+					<rect x="40" y="70" width="220" height="160" rx="18" fill="url(#g)" stroke="rgba(255,255,255,0.18)"/>
+					<text x="70" y="105" fill="rgba(255,255,255,0.9)" font-weight="600">Third-party exports</text>
+					<text x="70" y="135" fill="rgba(255,255,255,0.75)">LA building permits (CSV)</text>
+					<text x="70" y="160" fill="rgba(255,255,255,0.75)">Income group data (CSV)</text>
+					<text x="70" y="185" fill="rgba(255,255,255,0.75)">Manual CSV upload</text>
+
+					<!-- Middle -->
+					<rect x="320" y="70" width="260" height="160" rx="18" fill="url(#g)" stroke="rgba(255,255,255,0.18)"/>
+					<text x="340" y="105" fill="rgba(255,255,255,0.9)" font-weight="600">Snowflake (Cleaning & Modeling)</text>
+					<text x="350" y="135" fill="rgba(255,255,255,0.75)">Ingest CSV → validate</text>
+					<text x="350" y="155" fill="rgba(255,255,255,0.75)">Standardize & clean fields</text>
+					<text x="350" y="175" fill="rgba(255,255,255,0.75)">Join & aggregate for KPIs</text>
+					<text x="350" y="195" fill="rgba(255,255,255,0.75)">Discover inequality patterns</text>
+
+					<!-- Right -->
+					<rect x="640" y="70" width="230" height="160" rx="18" fill="url(#g)" stroke="rgba(255,255,255,0.18)"/>
+					<text x="645" y="105" fill="rgba(255,255,255,0.9)" font-weight="600">Streamlit Dashboard (Vibe coded)</text>
+					<text x="670" y="135" fill="rgba(255,255,255,0.75)">Interactive filters & charts</text>
+					<text x="670" y="160" fill="rgba(255,255,255,0.75)">KPI storytelling & drill-down</text>
+					<text x="670" y="185" fill="rgba(255,255,255,0.75)">Export / share</text>
+				</g>
+
+				<!-- Arrows -->
+				<g stroke="rgba(255,255,255,0.35)" stroke-width="3" fill="none" stroke-linecap="round">
+					<path d="M260 150 C290 150, 300 150, 320 150"/>
+					<path d="M580 150 C610 150, 620 150, 640 150"/>
+				</g>
+				<g fill="rgba(255,255,255,0.55)">
+					<polygon points="320,150 308,142 308,158"/>
+					<polygon points="640,150 628,142 628,158"/>
+				</g>
+
+				<!-- Labels -->
+				<!-- Labels -->
+				<g font-family="ui-sans-serif, system-ui" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+				</g>
+			</svg>
+			<div class="mt-6 grid gap-4 md:grid-cols-3">
+			<!-- Data Cleaning -->
+			<div class="rounded-2xl border border-white/10 bg-zinc-950/40 p-4">
+				<div class="text-xs text-zinc-400">Step 1</div>
+				<div class="mt-1 text-sm font-semibold">Data Cleaning</div>
+				<p class="mt-2 text-xs text-zinc-300">
+				Handle missing values (remove or impute), convert text fields to numeric types, and parse date strings into
+				standardized datetime formats for consistent downstream analysis.
+				</p>
+				<div class="mt-3 flex flex-wrap gap-2">
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Missing values</span>
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Text → Number</span>
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Text → Date</span>
+				</div>
+			</div>
+
+			<!-- Analysis -->
+			<div class="rounded-2xl border border-white/10 bg-zinc-950/40 p-4">
+				<div class="text-xs text-zinc-400">Step 2</div>
+				<div class="mt-1 text-sm font-semibold">Analysis</div>
+				<p class="mt-2 text-xs text-zinc-300">
+				Run Snowflake SQL analysis to quantify differences across income groups and extract actionable insights
+				(composition shifts, essential vs. non-essential reliance, and preference gaps).
+				</p>
+				<div class="mt-3 flex flex-wrap gap-2">
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">SQL metrics</span>
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Insight discovery</span>
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Inequality patterns</span>
+				</div>
+			</div>
+
+			<!-- UX -->
+			<div class="rounded-2xl border border-white/10 bg-zinc-950/40 p-4">
+				<div class="text-xs text-zinc-400">Step 3</div>
+				<div class="mt-1 text-sm font-semibold">UX (Productize)</div>
+				<p class="mt-2 text-xs text-zinc-300">
+				Productize validated insights using a Streamlit dashboard (vibe coded), enabling interactive filters,
+				drill-down views, and shareable visuals for storytelling.
+				</p>
+				<div class="mt-3 flex flex-wrap gap-2">
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Streamlit</span>
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Vibe coding</span>
+				<span class="rounded-full bg-white/10 px-2 py-1 text-[11px]">Interactive UX</span>
+				</div>
+			</div>
+			</div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <!-- Results -->
+  <section id="results" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      <div class="grid gap-10 md:grid-cols-3">
+        <!-- Left: Section title -->
+        <div class="md:col-span-1">
+          <h2 class="text-2xl font-semibold tracking-tight">Impact & Results</h2>
+          <p class="mt-2 text-zinc-300">
+            Policy-ready metrics that quantify how inequality shifts construction priorities.
+          </p>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="md:col-span-2">
+          <!-- Top summary -->
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div>
+                <div class="text-sm font-semibold">Key takeaway</div>
+                <p class="mt-1 text-zinc-300">
+                  Low-income neighborhoods rely more on essential (survival-level) permits, while high-income neighborhoods
+                  show greater capacity for improvement-driven upgrades.
+                </p>
+              </div>
+
+              <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
+                Stakeholder: City Policy / Urban Planning Analyst
+              </div>
+            </div>
+
+            <!-- 3 result cards -->
+            <div class="mt-6 grid gap-4 md:grid-cols-3">
+              <div class="rounded-2xl border border-white/10 bg-zinc-950/40 p-5">
+                <div class="text-xs text-zinc-400">Low income</div>
+                <div class="mt-2 text-3xl font-semibold">65.9%</div>
+                <p class="mt-2 text-sm text-zinc-300">
+                  Essential permit share — indicates heavier reliance on basic repairs.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-zinc-950/40 p-5">
+                <div class="text-xs text-zinc-400">High income</div>
+                <div class="mt-2 text-3xl font-semibold">52.1%</div>
+                <p class="mt-2 text-sm text-zinc-300">
+                  Lower essential reliance — suggests more room for discretionary upgrades.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-zinc-950/40 p-5">
+                <div class="text-xs text-zinc-400">Gap</div>
+                <div class="mt-2 text-3xl font-semibold">−13.8 pts</div>
+                <p class="mt-2 text-sm text-zinc-300">
+                  A clear inequality signal that’s easy to communicate and compare.
+                </p>
+              </div>
+            </div>
+
+            <!-- Policy takeaway -->
+            <div class="mt-6 rounded-2xl border border-white/10 bg-zinc-950/40 p-5">
+              <div class="text-xs text-zinc-400">Policy takeaway</div>
+              <p class="mt-2 text-sm text-zinc-300">
+                A higher “essential share” suggests constrained capacity for improvement projects. This helps prioritize infrastructure
+                support for neighborhoods that are structurally forced into maintenance spending.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  <section id="demo" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Demo & Walkthrough</h2>
+          <div class="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="text-sm font-semibold">What I would say in interviews</div>
+            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-300">
+              <li>我先把資料來源整合，建立可重用的模型層與一致的 KPI 定義。</li>
+              <li>再把洞察包裝成 Streamlit app，支援篩選、drill-down、匯出。</li>
+              <li>最後以效能與採用率驗證價值（速度、節省時間、使用者回饋）。</li>
+            </ul>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10" href="https://www.linkedin.com/in/chiachunhung0115/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10" href="mailto:tonyhong1998@gmail.com">Email</a>
+            <a class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10" href="#contact">Contact form</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="text-sm font-medium">Walkthrough video</div>
+            <div class="mt-4 aspect-video overflow-hidden rounded-2xl border border-white/10 bg-zinc-950">
+              <!-- Replace with your embed (YouTube/Loom) -->
+              <div class="flex h-full items-center justify-center text-sm text-zinc-500">
+                No video yet — screenshots below show key views of the app.
+              </div>
+            </div>
+            <p class="mt-3 text-xs text-zinc-500">若你沒有影片，也可以放 3 張 GIF 或截圖輪播。</p>
+          </div>
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-zinc-400">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>© <span id="year"></span> Your Name. Built with Tailwind CDN.</div>
+        <div class="flex flex-wrap gap-4">
+          <a class="hover:text-white" href="#overview">Overview</a>
+          <a class="hover:text-white" href="#architecture">Architecture</a>
+          <a class="hover:text-white" href="#demo">Demo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // Mobile menu toggle
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn?.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hero preview: rotate images (use your 5 screenshots)
+  const heroImages = [
+    'assets/hero_01.png',
+    'assets/hero_02.png',
+    'assets/hero_03.png',
+    'assets/hero_04.png',
+    'assets/hero_05.png'
+  ];
+
+  let heroIndex = 0;
+  const heroImg = document.getElementById('heroPreview');
+
+  // ✅ 想快一點就調小，想慢一點就調大
+  const ROTATE_MS = 2500;  // 建議 2000~3500
+  const FADE_MS = 350;     // 淡出/淡入時間
+
+  if (heroImg) {
+    // 讓第一張就用 heroImages[0]，避免你 HTML 的 src 還指到舊圖
+    heroImg.src = heroImages[0];
+
+    setInterval(() => {
+      heroImg.classList.remove('opacity-100');
+      heroImg.classList.add('opacity-0');
+
+      setTimeout(() => {
+        heroIndex = (heroIndex + 1) % heroImages.length;
+        heroImg.src = heroImages[heroIndex];
+        heroImg.classList.remove('opacity-0');
+        heroImg.classList.add('opacity-100');
+      }, FADE_MS);
+    }, ROTATE_MS);
+  }
+</script>
+</body>
+</html>
