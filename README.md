@@ -35,14 +35,24 @@ A lens commonly overlooked in purely technical analyses.
 
 ---
 
+## Repository Structure & Code Organization
+
+This repository is organized to clearly separate **analytical logic** from **interactive delivery**, reflecting real-world analytics and business intelligence workflows.
+
+- **`analysis/`**  
+  Contains the Jupyter Notebook documenting the full analytical process, including data preparation, permit classification logic, and key insights derived from Snowflake-based analysis. This folder focuses on *methodology and reasoning* rather than application deployment.
+
+- **`app/`**  
+  Contains the Streamlit application code used to deliver the interactive dashboard. This folder translates analytical outputs into user-facing visualizations, enabling exploration of construction patterns, income group comparisons, and essential vs. non-essential permit dynamics.
+
+This separation ensures analytical transparency while supporting scalable, user-oriented exploration of infrastructure inequality.
+
 ##  Tech Stack
 | Tool | Purpose |
 |------|---------|
 | **Snowflake (Snowpark)** | Scalable querying & joining of large permit + census datasets |
 | **Python (Pandas)** | Data cleaning, transformation, classification logic |
 | **Streamlit** | Interactive dashboard UI |
-| **Plotly** | Comparative & cumulative visualizations |
-| **Jupyter / VS Code** | Exploration & prototyping |
 
 ---
 
