@@ -66,7 +66,3 @@ This separation ensures analytical transparency while supporting scalable, user-
   - Category-level comparison  
 - Supports dynamic filtering for policy exploration
 - Exports insights for briefing or policymaker review
-
----
-
-## Example Visuals (Add Screenshots Later)
