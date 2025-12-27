@@ -1,4 +1,4 @@
-# Infrastructure Inequality Dashboard  
+# Building Permit Analytics for Infrastructure Inequality
 ### Quantifying Essential Construction Reliance Across Los Angeles Neighborhoods
 
 This project builds an interactive analytics dashboard to uncover how income inequality shapes construction and infrastructure priorities across Los Angeles. By combining building permit records with census-based income classifications, the dashboard quantifies essential vs. discretionary construction patterns and visualizes structural disparities across neighborhoods.
